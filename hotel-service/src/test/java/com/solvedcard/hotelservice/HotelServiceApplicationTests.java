@@ -1,4 +1,4 @@
-package com.pasan.hotelservice;
+package com.solvedcard.hotelservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

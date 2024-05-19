@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: u-services-k8
+  name: u-services-k8
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: u-services-k8
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: u-services-k8
+    spec:
+      containers:
+      - image: localhost:5000/services/hotel-service:0.0.1-SNAPSHOT
+        name: hotel-service
+        resources: {}
+status: {}

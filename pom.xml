@@ -27,7 +27,9 @@
 
     <modules>
         <module>beans</module>
-        <module>hotel-service</module>
         <module>core</module>
+
+        <module>hotel-service</module>
+        <module>staff-service</module>
     </modules>
 </project>

@@ -8,8 +8,12 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class HotelMapper {
+    private final ModelMapper modelMapper;
+
     @Autowired
-    private ModelMapper modelMapper;
+    public HotelMapper(ModelMapper modelMapper) {
+        this.modelMapper = modelMapper;
+    }
 
     public HotelDTO convertToDto(Hotel hotel) {
         return modelMapper.map(hotel, HotelDTO.class);

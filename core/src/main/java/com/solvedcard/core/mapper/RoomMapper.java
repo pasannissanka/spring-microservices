@@ -8,9 +8,12 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class RoomMapper {
+    private final ModelMapper modelMapper;
 
     @Autowired
-    private ModelMapper modelMapper;
+    public RoomMapper(ModelMapper modelMapper) {
+        this.modelMapper = modelMapper;
+    }
 
     public RoomDTO convertToDto(Room room) {
         RoomDTO roomDTO = modelMapper.map(room, RoomDTO.class);

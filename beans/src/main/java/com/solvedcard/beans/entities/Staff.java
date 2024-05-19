@@ -1,12 +1,14 @@
 package com.solvedcard.beans.entities;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
 @Table(name = "STAFF")
+@Data
 public class Staff {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

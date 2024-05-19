@@ -1,4 +1,4 @@
-package com.solvedcard.beans.entites;
+package com.solvedcard.beans.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -17,7 +17,7 @@ public class Room {
     private Hotel hotel;
 
     @ManyToOne
-    @JoinColumn(name = "room_type_id")
+    @JoinColumn(name = "roomType_id")
     private RoomType roomType;
 
     @Column()

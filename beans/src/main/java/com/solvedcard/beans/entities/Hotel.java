@@ -1,10 +1,8 @@
-package com.solvedcard.beans.entites;
+package com.solvedcard.beans.entities;
 
 import jakarta.persistence.*;
-import lombok.Builder;
 import lombok.Data;
 
-import java.util.HashSet;
 import java.util.Set;
 
 @Entity

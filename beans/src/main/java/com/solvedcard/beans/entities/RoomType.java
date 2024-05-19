@@ -1,7 +1,6 @@
-package com.solvedcard.beans.entites;
+package com.solvedcard.beans.entities;
 
 import jakarta.persistence.*;
-import lombok.Builder;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -28,7 +27,7 @@ public class RoomType {
     @Column()
     private int capacity;
 
-    @OneToMany(mappedBy = "room_type")
+    @OneToMany(mappedBy = "roomType")
     private Set<Room> rooms;
 
 }

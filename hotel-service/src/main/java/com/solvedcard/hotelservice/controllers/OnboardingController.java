@@ -2,10 +2,13 @@ package com.solvedcard.hotelservice.controllers;
 
 import com.solvedcard.beans.dtos.HotelDTO;
 import com.solvedcard.beans.dtos.requests.OnboardingRequest;
+import com.solvedcard.beans.dtos.responses.ResponseData;
+import com.solvedcard.hotelservice.constants.SuccessMessages;
 import com.solvedcard.hotelservice.services.OnboardingService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,12 +28,13 @@ public class OnboardingController {
 
     /**
      * POST Onboard a hotel
-     * @param request
-     * @return
+     *
+     * @param request OnboardingRequest
+     * @return ResponseEntity<ResponseData<HotelDTO, ?>>
      */
     @PostMapping("/hotel")
-    public HotelDTO onboardHotel(@RequestBody() OnboardingRequest request) {
+    public ResponseEntity<ResponseData<HotelDTO, ?>> onboardHotel(@RequestBody() OnboardingRequest request) {
         logger.info("onboardHotel: [{}]", request);
-        return onboardingService.onboardHotel(request);
+        return ResponseEntity.ok(ResponseData.success(onboardingService.onboardHotel(request), SuccessMessages.HOTEL_CREATED));
     }
 }

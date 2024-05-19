@@ -36,4 +36,7 @@ public class Hotel {
 
     @OneToMany(mappedBy = "hotel")
     private Set<Room> rooms;
+
+    @OneToMany(mappedBy = "hotel")
+    private Set<Staff> employees;
 }
